@@ -73,10 +73,6 @@ header::after{
  opacity: 0;
 }
 
-.rockey-dashed{
-    animation-delay: .6s;
-}
-
 .header-title{
     animation-delay: .8s;
 }
@@ -87,6 +83,22 @@ header::after{
 
 .header-button{
     animation-delay: 1.1s;
+}
+
+.header-down-arrow{
+    animation: pules 2s 3s ease-out infinite;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    text-align: center;
+    z-index: 10;
+}
+
+.header-down-arrow img{
+    animation: fade-slide-up 1s 1s ease-out forwards;
+    opacity: 0;
+    cursor: pointer;
 }
 
 
@@ -120,4 +132,30 @@ header::after{
     100%{
         transform: rotateZ(-4deg);
     }
+}
+
+@keyframes fade-slide-up {
+    0%{
+        opacity: 0;
+        transform: translateY(4rem);
+    }
+    100%{
+        opacity: 1;
+        transform: none;
+    }
+}
+
+@keyframes pules {
+     0%{
+       opacity: 1;
+       transform: none;
+     }
+     50%{
+        opacity: .8;
+        transform: translateY(1rem);
+     }
+     100%{
+        opacity: 1;
+        transform: none;
+     }
 }
