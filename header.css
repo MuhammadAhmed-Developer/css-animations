@@ -2,6 +2,7 @@
 *{
     margin: 0;
     padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
 }
 
 header{
@@ -32,6 +33,7 @@ header::before{
 }
 
 header::after{
+    animation: rotate-up .5s .5s cubic-bezier(0, .5, 0, 1) forwards;
     background: #F9FCFF;
     content: "";
     height: 40rem;
@@ -40,15 +42,16 @@ header::after{
     right: -5%;
     top: 90%;
     transform-origin: 0 0;
-    transform: rotateZ(-4deg);
+    /* transform: rotateZ(-4deg); */
 }
 
 .header-title, .header-subtitle{
     color: #fff;
+    margin-bottom: 1rem;
 }
 
 .header-subtitle{
-    margin-bottom: 5rem;
+    margin-bottom: 2rem;
     text-transform: uppercase;
 }
 
@@ -65,15 +68,56 @@ header::after{
     color: #fff;
 }
 
+.animate-pop-in{
+ animation: pop-in .6s cubic-bezier(0,.9,.3, 1.2) forwards;
+ opacity: 0;
+}
+
+.rockey-dashed{
+    animation-delay: .6s;
+}
+
+.header-title{
+    animation-delay: .8s;
+}
+
+.header-subtitle{
+    animation-delay: 1s;
+}
+
+.header-button{
+    animation-delay: 1.1s;
+}
+
+
+
 /*  Animations */
 
 @keyframes fade-slide-down {
     0%{
        opacity: 0;
-       transform: translate(-4rem);
+       transform: translateY(-4rem);
     }
     100%{
         opacity: 1;
         transform: none;
+    }
+}
+
+@keyframes pop-in {
+    0%{
+       opacity: 0;
+       transform: translateY(-4rem) scale(.8);
+    }
+    100%{
+        opacity: 1;
+        transform: none;
+
+    }
+}
+
+@keyframes rotate-up  {
+    100%{
+        transform: rotateZ(-4deg);
     }
 }
